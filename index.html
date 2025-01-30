@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupón de Felicitaciones</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .cupon {
+            width: 300px;
+            height: 150px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 18px;
+            position: relative;
+            animation: respiracion 3s ease-in-out infinite;
+        }
+
+        @keyframes respiracion {
+            0%, 100% {
+                transform: rotate(0deg) scale(1);
+            }
+            50% {
+                transform: rotate(5deg) scale(1.05);
+            }
+        }
+        .particula {
+          position: absolute;
+          width: 2px;
+          height: 2px;
+          background-color: white;
+          border-radius: 50%;
+          animation: particulas 2s ease-in-out infinite;
+      }
+
+      @keyframes particulas {
+          0% {
+              transform: translateY(0) scale(0);
+              opacity: 0;
+          }
+          50% {
+              transform: translateY(-20px) scale(1);
+              opacity: 1;
+          }
+          100% {
+              transform: translateY(-40px) scale(0);
+              opacity: 0;
+          }
+      }
+
+        .cupon::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px dashed rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="cupon">
+        <p>
+          Felicidades por tus 21,
+          <br>
+           <b>Vale por un corte de pelo en el paleti style</b>
+        </p>
+    </div>
+    <div class="particula" style="top: 10%; left: 20%;"></div>
+        <div class="particula" style="top: 30%; left: 50%;"></div>
+        <div class="particula" style="top: 70%; left: 80%;"></div>
+        <div class="particula" style="top: 20%; left: 90%;"></div>
+        <div class="particula" style="top: 75%; left: 92%;"></div>
+        <div class="particula" style="top: 30%; left: 98%;"></div>
+        <div class="particula" style="top: 10%; left: 15%;"></div>
+        <div class="particula" style="top: 50%; left: 20%;"></div>
+        <div class="particula" style="top: 90%; left: 40%;"></div>
+        <div class="particula" style="top: 40%; left: 10%;"></div>
+        <div class="particula" style="top: 80%; left: 20%;"></div>
+        <div class="particula" style="top: 90%; left: 30%;"></div>
+        <audio id="background-music" autoplay loop>
+          <source src="Close To You.mp3" type="audio/mpeg">
+          
+      </audio>
+  
+      <script>
+          // Asegura que la música se reproduzca automáticamente
+          document.addEventListener('DOMContentLoaded', function() {
+              var audio = document.getElementById('background-music');
+              audio.play();
+          });  
+        </script>
+</body>
+</html>
